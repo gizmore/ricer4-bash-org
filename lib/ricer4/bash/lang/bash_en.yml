@@ -1,0 +1,45 @@
+en:
+  ricer4:
+    param:
+      bash_provider:
+        type: "BashProvider"
+        err_unknown_provider: "is an unknown bash provider"
+
+    plugins:
+      bash:
+        
+        quote:
+          list_item: "%{id}-%{cite_text}"
+          show_item: "%{provider}#%{cite_id}: %{cite_text} – ID: %{id}, Likes: %{likes}"
+        
+        announce:
+          trigger: "bash.announce"
+          description: "Announce new quotes from the bash providers."
+          msg_new_quotes: "[%{provider}]#%{cite_id}: %{cite_text} – ID: %{id}"
+        
+        bash:
+          trigger: "bash"
+          description: "Browse quotes on various quote sites like (german-)bash.org."
+          
+        dislike:
+          trigger: "bash.dislike"
+          
+        get:
+          trigger: "bash.get"
+          description: "Load a certain quote from a providing quote site."
+
+        like:
+          trigger: "bash.like"
+
+        set_provider:
+          trigger: "bash.provider"
+          description: "Specify the bash quotation provider site."
+          
+        search:
+          trigger: "bash.search"
+
+        show:
+          trigger: "bash.show"
+          description: "Load a certain quote from a site like bash.org."
+          
+        
